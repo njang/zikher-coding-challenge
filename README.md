@@ -14,4 +14,3 @@
 1. Custom features (filters, ratings, comments, etc).
 1. Preprocessors (Sass/Less, Haml, Typescript, Babel, Compass, etc).
 1. Mobile compatibility (NativeScript).
-1. Build systems and task runners (Gulp, Grunt, etc).
