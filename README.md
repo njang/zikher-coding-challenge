@@ -1,1 +1,1 @@
-# zikher-coding-challenge
+# Zikher Coding Challenge
