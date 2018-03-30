@@ -7,7 +7,7 @@ class Result extends Component {
 				Search results
 				<ul>
     				{this.props.results.map(book => (
-		                <li key={book.id}>{ book.volumeInfo.title } by { book.volumeInfo.authors[0] }</li>
+		                <li key={book.id}>{ book.volumeInfo.title }</li>
         			))
     				}
     			</ul>
