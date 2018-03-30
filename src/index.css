@@ -3,3 +3,26 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.ribbon {
+	background-color: darkred;
+	position: fixed;
+	overflow: hidden;
+	right: -60px;
+	top: 50px;
+	transform: rotate(45deg);
+	box-shadow: 0 0 10px #888;
+    z-index: 999;
+}
+
+.ribbon a {
+    border: 1px solid white;
+    color: #fff;
+    display: block;
+    font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 1px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 5px #444;
+}
