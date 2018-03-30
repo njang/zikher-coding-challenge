@@ -1,45 +1,43 @@
 import React, { Component } from "react";
 import axios from 'axios'
-// import Result from './Result'
+import Result from './Result'
 
 const API_URL = 'https://www.googleapis.com/books/v1/volumes'
  
 class Search extends Component {
 	state = {
 		query: '',
+		limit: '',
 		results: []
 	}
 
 	handleChange = event => {
-		this.setState({ query: event.target.value });
+		this.setState({ 
+			[event.target.name]: event.target.value 
+		});
+		// this.setState({ 
+		// 	query: event.target.value 
+		// });
 	}
 
 	handleSubmit = event => {
     	event.preventDefault();
-	    axios.get(`${API_URL}?q=${this.state.query}`)
-	    	.then(res => {
-	        console.log(res.data.items);
+	    axios.get(`${API_URL}?q=${this.state.query}&maxResults=${this.state.limit}`).then((res) => {
 	        this.setState({
 	        	results: res.data.items
 	        })
-      })
+        })
 	}
 
 	render() {
-		let resultDisplay = this.state.results.map((book) => {
-            return (
-                <li key={book.id}>{ book.volumeInfo.title } by { book.volumeInfo.authors[0] }</li>
-            )
-        })
 		return (
 			<div className="container">
 				<form onSubmit={this.handleSubmit}>
-	            	<input type="text" name="query" onChange={this.handleChange} />
+            		<input type="text" name="query" aria-label="Query" onChange={this.handleChange} />
+            		<input type="number" name="limit" aria-label="Limit" placeholder="Limit results" step="5" min="5" max="40" onChange={this.handleChange} />
 	          		<button type="submit">Find</button>
         		</form>
-        		<ul>
-    			{ resultDisplay }
-    			</ul>
+    			<Result results={this.state.results} />
 			</div>
 		);
 	}
