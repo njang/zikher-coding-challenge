@@ -1,30 +1,45 @@
 import React, { Component } from "react";
+import axios from 'axios'
+// import Result from './Result'
+
+const API_URL = 'https://www.googleapis.com/books/v1/volumes'
  
 class Search extends Component {
-	constructor(){
-		super()
-		this.state = {
-			query: ""
-		}
-	} 
-	handleInputChange = () => {
-		this.setState({
-			query: this.search.value
+	state = {
+		query: '',
+		results: []
+	}
+
+	componentDidMount() {
+    	axios.get(`${API_URL}?q=tiger`)
+			.then(res => {
+			const results = res.data;
+			this.setState({ results });
 		})
+	}
+
+	handleChange = event => {
+		this.setState({ name: event.target.value });
+	}
+
+	handleSubmit = event => {
+    	event.preventDefault();
+	    const user = {
+	      	name: this.state.name
+	    };
+	    axios.get(`${API_URL}?q=${this.state.name}`, { user })
+	    	.then(res => {
+	        console.log(res.data.items);
+      })
 	}
 
 	render() {
 		return (
 			<div className="container">
-				<form>
-					<input 
-						type="text" placeholder="Search.." 
-						ref={input => this.search = input}
-         				onChange={this.handleInputChange}
-					/>
-					<input type="submit" text="Submit" />
-					<p>{this.state.query}</p>
-				</form>
+				<form onSubmit={this.handleSubmit}>
+	            	<input type="text" name="name" onChange={this.handleChange} />
+	          		<button type="submit">Find</button>
+        		</form>
 			</div>
 		);
 	}
