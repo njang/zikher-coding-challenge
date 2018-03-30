@@ -7,7 +7,7 @@ const API_URL = 'https://www.googleapis.com/books/v1/volumes'
 class Search extends Component {
 	state = {
 		query: '',
-		limit: '',
+		limit: '10',
 		results: []
 	}
 
@@ -15,9 +15,6 @@ class Search extends Component {
 		this.setState({ 
 			[event.target.name]: event.target.value 
 		});
-		// this.setState({ 
-		// 	query: event.target.value 
-		// });
 	}
 
 	handleSubmit = event => {
@@ -34,7 +31,7 @@ class Search extends Component {
 			<div className="container">
 				<form onSubmit={this.handleSubmit}>
             		<input type="text" name="query" aria-label="Query" onChange={this.handleChange} />
-            		<input type="number" name="limit" aria-label="Limit" placeholder="Limit results" step="5" min="5" max="40" onChange={this.handleChange} />
+            		<input type="number" name="limit" aria-label="Limit" placeholder="Limit results" defaultValue="10" step="5" min="10" max="40" onChange={this.handleChange} />
 	          		<button type="submit">Find</button>
         		</form>
     			<Result results={this.state.results} />
