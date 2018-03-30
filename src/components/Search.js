@@ -10,24 +10,16 @@ class Search extends Component {
 		results: []
 	}
 
-	componentDidMount() {
-    	axios.get(`${API_URL}?q=tiger`)
-			.then(res => {
-			const results = res.data;
-			this.setState({ results });
-		})
-	}
-
 	handleChange = event => {
-		this.setState({ name: event.target.value });
+		this.setState({ query: event.target.value });
 	}
 
 	handleSubmit = event => {
     	event.preventDefault();
 	    const user = {
-	      	name: this.state.name
+	      	query: this.state.query
 	    };
-	    axios.get(`${API_URL}?q=${this.state.name}`, { user })
+	    axios.get(`${API_URL}?q=${this.state.query}`, { user })
 	    	.then(res => {
 	        console.log(res.data.items);
       })
@@ -37,7 +29,7 @@ class Search extends Component {
 		return (
 			<div className="container">
 				<form onSubmit={this.handleSubmit}>
-	            	<input type="text" name="name" onChange={this.handleChange} />
+	            	<input type="text" name="query" onChange={this.handleChange} />
 	          		<button type="submit">Find</button>
         		</form>
 			</div>
