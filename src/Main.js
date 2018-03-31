@@ -8,8 +8,8 @@ class Main extends Component {
         return (
             <div className="Main">
                 {/*<h1 className="Main-title text-center">Zikher Coding Challenge</h1>*/}
-                <Ribbon />
                 <Search />
+                <Ribbon />
                 <Footer />
             </div>
         );
