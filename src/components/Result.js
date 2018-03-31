@@ -27,6 +27,11 @@ class Result extends Component {
         })
 		return (
 			<div className="container">
+            	<div className="row">
+            		<div className="col-7 h4">Title</div>
+					<div className="col-3 h4">Authors</div>
+					<div className="col-2 h4">Published Date</div>
+				</div>
 				{ booksDisplay }
 			</div>
 		);
