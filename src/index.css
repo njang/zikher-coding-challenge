@@ -31,6 +31,10 @@ body {
   height: 90vh;  
 }
 
+.result {
+  padding: 5vh;
+}
+
 .footer {
   height: 10vh;
 }
