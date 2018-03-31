@@ -7,7 +7,7 @@ const API_URL = "https://www.googleapis.com/books/v1/volumes"
 class Search extends Component {
 	state = {
 		query: "",
-		limit: "40",
+		limit: "10",
 		initialMode: true,
 		results: []
 	}
