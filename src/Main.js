@@ -6,12 +6,12 @@ import Footer from "./components/Footer";
 class Main extends Component {
     render() {
         return (
-            <div className="Main">
-                {/*<h1 className="Main-title text-center">Zikher Coding Challenge</h1>*/}
+            <main className="Main">
+                <h3 className="Main-title text-center">Zikher Coding Challenge</h3>
                 <Search />
                 <Ribbon />
                 <Footer />
-            </div>
+            </main>
         );
     }
 }
