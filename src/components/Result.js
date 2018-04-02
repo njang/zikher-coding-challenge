@@ -16,6 +16,7 @@ class Result extends Component {
             <BookDisplay 
             	key = { book.id }
             	title = { book.volumeInfo.title }
+            	isbn10 = { book.volumeInfo.industryIdentifiers[0].identifier }
             	authors = { book.volumeInfo.authors }
             	publishedDate = { book.volumeInfo.publishedDate }
             	thumbnail = { book.volumeInfo.imageLinks.smallThumbnail }
