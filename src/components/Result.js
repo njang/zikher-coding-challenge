@@ -21,6 +21,7 @@ class Result extends Component {
             	publishedDate = { book.volumeInfo.publishedDate }
             	thumbnail = { book.volumeInfo.imageLinks.smallThumbnail }
             	previewLink = { book.volumeInfo.previewLink }
+            	description = { book.volumeInfo.description }
             />
         ))
 		return (
