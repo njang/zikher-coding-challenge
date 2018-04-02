@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BookDisplay from "./BookDisplay"
 
 class Result extends Component {
 	render() {
@@ -11,26 +12,22 @@ class Result extends Component {
 			}
 			return 0;
         })
-        let booksDisplay = this.props.results.map((book) => {
-            return (
-            	<div className="row" key={ book.id }>
-            		<div className="col-7">
-            			<a href={ book.selfLink } target="_blank" rel="noopener noreferrer" >
-            				<img src={ book.volumeInfo.imageLinks.smallThumbnail} alt={ book.volumeInfo.title } />
-							{ book.volumeInfo.title }
-						</a>
-					</div>
-					<div className="col-3">{ book.volumeInfo.authors }</div>
-					<div className="col-2">{ book.volumeInfo.publishedDate }</div>
-				</div>
-            )
-        })
+        let booksDisplay = this.props.results.map(book => (
+            <BookDisplay 
+            	key = { book.id }
+            	title = { book.volumeInfo.title }
+            	authors = { book.volumeInfo.authors }
+            	publishedDate = { book.volumeInfo.publishedDate }
+            	thumbnail = { book.volumeInfo.imageLinks.smallThumbnail }
+            	selfLink = { book.selfLink }
+            />
+        ))
 		return (
 			<div className="container">
             	<div className="row">
-            		<div className="col-7 h4">Title</div>
-					<div className="col-3 h4">Authors</div>
-					<div className="col-2 h4">Published Date</div>
+            		<div className="col-7 h4" onClick="alert('Title')">Title</div>
+					<div className="col-3 h4" onClick="alert('Authors')">Authors</div>
+					<div className="col-2 h4" onClick="alert('Date')">Published Date</div>
 				</div>
 				{ booksDisplay }
 			</div>
