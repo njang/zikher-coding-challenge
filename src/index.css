@@ -11,8 +11,13 @@ body {
 	right: -65px;
 	top: 50px;
 	transform: rotate(45deg);
-	box-shadow: 0 0 10px #888;
   z-index: -999;
+	/*box-shadow: 0 0 10px #888;*/
+  /*border-bottom: 100px solid;*/
+  /*border-left: 50px solid transparent;*/
+  /*border-right: 50px solid transparent;*/
+  /*height: 0;*/
+  /*width: 100px;*/
 }
 
 .ribbon a {
@@ -30,7 +35,7 @@ body {
 @media only screen and (max-width: 600px) {
   .ribbon {
     display: hidden;
-    background-color: navy;
+    background-color: darkred;
     transform: rotate(0deg);
     position: absolute;
     overflow: hidden;
