@@ -19,7 +19,7 @@ class Result extends Component {
             	authors = { book.volumeInfo.authors }
             	publishedDate = { book.volumeInfo.publishedDate }
             	thumbnail = { book.volumeInfo.imageLinks.smallThumbnail }
-            	selfLink = { book.selfLink }
+            	previewLink = { book.volumeInfo.previewLink }
             />
         ))
 		return (
