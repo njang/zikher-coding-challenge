@@ -13,7 +13,8 @@ class BookDisplay extends Component {
 				<img src={ this.props.thumbnail } alt={ this.props.title } height="60px" />
 
 				<div className="col-3">{ this.props.authors }</div>
-				<div className="col-2">{ this.props.publishedDate }</div>
+				<div className="col-2">{ this.props.publishedDate.slice(0,4) }</div>
+				<div className="col-10 book-description">{ this.props.description }</div>
 			</div>
         )
 	}
