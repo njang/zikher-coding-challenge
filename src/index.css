@@ -55,3 +55,20 @@ body {
 .footer {
   height: 10vh;
 }
+
+
+.github-corner-svg {
+  /*fill:#FD6C6C; */
+  fill: darkred; 
+  color:#fff; 
+  position: absolute; 
+  top: 0; 
+  border: 0; 
+  right: 0;
+  z-index: -999;
+  
+}
+
+.github-corner-path {
+  transform-origin: 130px 106px;
+}
