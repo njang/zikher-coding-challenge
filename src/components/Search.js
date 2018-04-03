@@ -8,7 +8,8 @@ const API_URL = "https://www.googleapis.com/books/v1/volumes"
 class Search extends Component {
 	state = {
 		query: "",
-		limit: "10",
+		// limit: "10",
+		limit: "40",
 		initialMode: true,
 		results: []
 	}
@@ -34,7 +35,7 @@ class Search extends Component {
 			<div className="row align-items-center justify-content-center search">
 				<form className="col-11 col-sm-8 row form-group justify-content-center" onSubmit={this.handleSubmit}>
             		<input className="col-7 col-md-6 col-lg-5 form-control" type="text" name="query" aria-label="Query" placeholder="Search Google Books" onChange={this.handleChange} />
-            		<input className="col-2 form-control" type="number" name="limit" aria-label="Limit" placeholder="Limit results" defaultValue="10" step="5" min="10" max="40" onChange={this.handleChange} />
+            		{/*<input className="col-2 form-control" type="number" name="limit" aria-label="Limit" placeholder="Limit results" defaultValue="10" step="5" min="10" max="40" onChange={this.handleChange} />*/}
 	          		<button className="col-3 col-md-2 btn" type="submit">Find</button>
         		</form>
         		{/*this.state.initialMode ? null : <Result results={this.state.results} /> */}
@@ -45,7 +46,7 @@ class Search extends Component {
 				<div className="row align-items-center justify-content-center result">
 					<form className="col-11 col-sm-8 row form-group justify-content-center" onSubmit={this.handleSubmit}>
 	            		<input className="col-7 col-md-6 col-lg-5 form-control" type="text" name="query" aria-label="Query" placeholder="Search Google Books" onChange={this.handleChange} />
-	            		<input className="col-2 form-control" type="number" name="limit" aria-label="Limit" placeholder="Limit results" defaultValue="10" step="5" min="10" max="40" onChange={this.handleChange} />
+	            		{/*<input className="col-2 form-control" type="number" name="limit" aria-label="Limit" placeholder="Limit results" defaultValue="10" step="5" min="10" max="40" onChange={this.handleChange} />*/}
 		          		<button className="col-3 col-md-2 col-lg-1 btn" type="submit">Find</button>
 	        		</form>
 	        		<Result results={this.state.results} />
